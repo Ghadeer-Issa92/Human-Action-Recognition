@@ -16,7 +16,7 @@ This dataset is comprised of 12 subjects doing the following 6 actions for 5 rep
  * WAVING_1HAND
  * CLAPPING_HANDS
 
-
+![image] (https://github.com/stuarteiffert/RNN-for-Human-Activity-Recognition-using-2D-Pose-Input/blob/master/images/boxing_all_views.gif)
 ![image](https://drive.google.com/uc?export=view&id=1Cwl-OY-XeJsE1H_uJ4Ajw9CsUTJCJIGr)
 
 
