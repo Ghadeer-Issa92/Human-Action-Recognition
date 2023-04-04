@@ -7,6 +7,8 @@ Detectron2: a powerful object detection library that is capable of detecting hum
 
 LSTM: a type of recurrent neural network that is capable of processing sequences of inputs such as time-series data.
 
+bye
+
 Dataset: RNN for Human Activity Recognition - 2D Pose Input [a link](https://github.com/stuarteiffert/RNN-for-Human-Activity-Recognition-using-2D-Pose-Input#dataset-overview)
 
 This dataset is comprised of 12 subjects doing the following 6 actions for 5 repetitions, filmed from 4 angles, repeated 5 times each.
