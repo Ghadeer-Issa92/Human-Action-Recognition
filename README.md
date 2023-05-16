@@ -1,14 +1,12 @@
 # Human-Action-Recognition
 This project is for Computer Vision course - Innopolis University - S23
 
-This project uses Detectron2 and LSTM to recognize human actions in videos. 
+## First approach 
+**Detectron2 and LSTM to recognize human actions in videos.** 
 
 Detectron2: a powerful object detection library that is capable of detecting humans in video frames. [a link](https://github.com/facebookresearch/detectron2)
 
 LSTM: a type of recurrent neural network that is capable of processing sequences of inputs such as time-series data.
-
-bye
-this is from feat 1
 
 Dataset: RNN for Human Activity Recognition - 2D Pose Input [a link](https://github.com/stuarteiffert/RNN-for-Human-Activity-Recognition-using-2D-Pose-Input#dataset-overview)
 
@@ -22,29 +20,56 @@ This dataset is comprised of 12 subjects doing the following 6 actions for 5 rep
  * WAVING_1HAND
  * CLAPPING_HANDS
 
-
- The below image is an example of the 4 camera views during the 'boxing' action for subject 1
 ![image](https://github.com/stuarteiffert/RNN-for-Human-Activity-Recognition-using-2D-Pose-Input/blob/master/images/boxing_all_views.gif)
------------------------------------
-## Timeline
+-------------------------------
+-------------------------------
+### Steps:
+* Taking keypoints from the videos (20,30,60) frames.
+* Preproccessing the data.(pad, normalize, split, One-hot encode the labels).
+* Define the LSTM model (128 units).
+* Train and evalute the model.
+for this model the dataset was limited thus the accuracy was low (approx 0.2)
 
-|#Weeks |Task                               |
-|---    |---                                |
-|   2   |dataset preprocessing              |
-|   3   |LTSM implementation                |
-|   1   |LTSM evaluation                    |
-
-
-
-
-
-
+## Second approach 
+**CNN + LSTM (ConvLSTM)** Using a CNN to extract spatial features at a given time step in the input sequence (video) and then an LSTM to identify temporal relations between frames.
+A ConvLSTM cell is a variant of an LSTM network that contains convolutions operations in the network. it is an LSTM with convolution embedded in the architecture, which makes it capable of identifying spatial features of the data while keeping into account the temporal relation.
 
 
 
 
 
 
+![Screenshot from 2023-05-16 19-29-25](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/3a9ec0ee-01eb-4525-9515-2df8f26bf9db)
+
+For video classification, this approach captures the spatial relation in the individual frames and the temporal relation across the different frames.
+As a result of this convolution structure, the ConvLSTM is capable of taking in 3-dimensional input (width, height, num_of_channels) whereas a simple LSTM only takes in 1-dimensional input.
+
+*more info about ConvLSTM [Here](https://medium.com/neuronio/an-introduction-to-convlstm-55c9025563a7)*
+
+**Dataset** from  **UCF101** [dataset](https://www.crcv.ucf.edu/data/UCF101.php) Using these calsses:
+  * Archery
+  * BaseballPitch
+  * Bowling
+  * BoxingPunchingBag
+  * CliffDiving
+  * Drumming
+  * GolfSwing
+  * JumpingJack
+  * PlayingGuitar
+  * Punch
+  * WritingOnBoard
+  
+    
+### Steps:
+* **Preprocess the Dataset** Resize the frames of the videos to a fixed width and height, and normalized the data to range `[0-1]` by dividing the pixel values with `255`.
+* **Split the Data into Train and Test Set.** 
+* **Construct and train the model the Model** (4 ConvLstm , 50 epochs)
+* **Plot Model’s Loss & Accuracy Curves**
+<!-- 
+ ![output](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/821c95e9-a87d-49ca-81e5-69d162dde2d0) ![output1](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/266486c0-4fda-4a20-ad4a-64d54876a372) -->
+ <img src="https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/821c95e9-a87d-49ca-81e5-69d162dde2d0" width="250" height="250">  <img src="https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/266486c0-4fda-4a20-ad4a-64d54876a372" width="250" height="250">
+ * **Saving the trained model**
+ * **Deploy the model using FLASK**
 
 
 
