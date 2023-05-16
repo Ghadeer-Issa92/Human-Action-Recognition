@@ -1,5 +1,5 @@
 # Human-Action-Recognition
-This project is for Computer Vision course - Innopolis University - S23
+Computer Vision  - Innopolis University - S23
 
 ## First approach 
 **Detectron2 and LSTM to recognize human actions in videos.** 
@@ -69,7 +69,21 @@ As a result of this convolution structure, the ConvLSTM is capable of taking in 
  ![output](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/821c95e9-a87d-49ca-81e5-69d162dde2d0) ![output1](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/266486c0-4fda-4a20-ad4a-64d54876a372) -->
  <img src="https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/821c95e9-a87d-49ca-81e5-69d162dde2d0" width="250" height="250">  <img src="https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/266486c0-4fda-4a20-ad4a-64d54876a372" width="250" height="250">
  * **Saving the trained model**
- * **Deploy the model using FLASK**
+
+--------------------
+----------------------
+ ## Deploy the model using FLASK
+ * Main page where you can enter Youtube video URL
+
+ ![Screenshot from 2023-05-16 22-16-47](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/dea1c554-190c-4d9c-8a8a-6f7795fa189b)
+ * Result page
+ 
+ ![Screenshot from 2023-05-16 22-19-49](https://github.com/Ghadeer-Issa92/Human-Action-Recognition/assets/113966581/657fd596-633a-46c5-b419-ea462cb35293)
+## How to run
+* Run this [colab](https://colab.research.google.com/drive/1-ADGAnWbbJDwBPAmmqOU5msGpnjDpRFg?usp=sharing) to deploy the trained model.
+
+`if you counter  Uploader_id error  use this` [solution](https://stackoverflow.com/questions/75495800/error-unable-to-extract-uploader-id-youtube-discord-py)  `to fix it `
+
 
 
 
